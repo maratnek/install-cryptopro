@@ -40,7 +40,8 @@ function install_cades() {
     installer -package /Volumes/cprocsp-pki-2.0.0/cprocsp-pki-2.0.0.mpkg -target /
     hdiutil detach /Volumes/cprocsp-pki-2.0.0
   else
-    dpkg -i cprocsp-pki-cades_2.0.0-1_amd64.deb
+    dpkg -i cprocsp-pki-cades-64_2.0.14815-1_amd64.deb
+    # dpkg -i cprocsp-pki-cades_2.0.0-1_amd64.deb
   fi
 }
 
@@ -57,6 +58,7 @@ function uninstall() {
 }
 
 function check_and_fix_license() {
+  echo "Check and fix license..."
   if [[ $($CPCONFIG -license -view 2>&1) == *"Error code"* ]]; then
     echo "Fixing license.."
     rm /etc/opt/cprocsp/license.ini
@@ -72,6 +74,7 @@ function check_and_fix_license() {
 }
 
 function check_and_fix_rng() {
+  echo "Check and fix RNG..."
   if [[ $($CSPTEST -keyset -newkeyset -password 123456 -hard_rng -container 'HDIMAGE\\dummy68' -silent 2>&1) == *"80090022"* ]]; then
     echo "Fixing RNG.."
     $CPCONFIG -hardware rndm -add cpsd -name 'cpsd rng' -level 3
