@@ -40,7 +40,9 @@ function install_cades() {
     installer -package /Volumes/cprocsp-pki-2.0.0/cprocsp-pki-2.0.0.mpkg -target /
     hdiutil detach /Volumes/cprocsp-pki-2.0.0
   else
-    dpkg -i cprocsp-pki-cades-64_2.0.14815-1_amd64.deb
+    (tar xzvf linux-amd64_deb.tgz && cd linux-amd64_deb && dpkg -i cprocsp-pki-cades-64_2.0.14927-1_amd64.deb)
+    rm -rf linux-amd64_deb
+    # dpkg -i cprocsp-pki-cades-64_2.0.14815-1_amd64.deb
     # dpkg -i cprocsp-pki-cades_2.0.0-1_amd64.deb
   fi
 }
