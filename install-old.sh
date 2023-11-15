@@ -50,3 +50,10 @@ echo Show container brc
 
 # delete container
 /opt/cprocsp/bin/amd64/csptest -keyset -deletekeyset -cont '\\.\HDIMAGE\test'
+
+
+
+
+
+
+
