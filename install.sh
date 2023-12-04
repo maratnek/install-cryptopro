@@ -42,10 +42,10 @@ function install_cades() {
   else
     tar xzvf linux-amd64_deb.tgz
     cd linux-amd64_deb
-    dpkg -i cprocsp-rdr-gui-gtk-64_5.0.12922-7_amd64.deb 
-    dpkg -i cprocsp-pki-cades-64_2.0.14927-1_amd64.deb
-    dpkg -i cprocsp-pki-phpcades_2.0.14927-1_all.deb
-    dpkg -i cprocsp-pki-plugin-64_2.0.14927-1_amd64.deb
+    dpkg -i cprocsp-rdr-gui-gtk*amd64.deb 
+    dpkg -i cprocsp-pki-cades-*amd64.deb
+    dpkg -i cprocsp-pki-phpcades_*.deb
+    dpkg -i cprocsp-pki-plugin-64_*amd64.deb
     cd ..
     rm -rf linux-amd64_deb
     # dpkg -i cprocsp-pki-cades-64_2.0.14815-1_amd64.deb

@@ -93,6 +93,19 @@ sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel cpext -mask 0xF
 sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel capi20 -mask 0xF
 sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel capilite -mask 0xF
 ```
+### delete all logs
+```bash
+sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel ocsp -mask 0
+sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel tsp -mask 0
+sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel cades -mask 0
+sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel cpcsp -mask 0
+sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel capi10 -mask 0
+sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel cprdr -mask 0
+sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel cpext -mask 0
+sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel capi20 -mask 0
+sudo /opt/cprocsp/sbin/amd64/cpconfig -loglevel capilite -mask 0
+```
+
 
 После настройки логи будут записываться в системный лог, начать просмотр которого можно командой:
 
