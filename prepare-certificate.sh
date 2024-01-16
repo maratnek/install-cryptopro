@@ -12,7 +12,8 @@ echo "o" | /opt/cprocsp/bin/amd64/certmgr -inst -store uRoot -file certnew.crt
 
 # create own certificate base on the my store 
 # create for siganture (attribute -sg)
-/opt/cprocsp/bin/amd64/cryptcp -createcert -rdn "E=zm@bank.ru,CN=ZM" -cont 'clientcont' -pin 1234 -certusage "1.3.6.1.4.1.311.10.3.12" -sg
+/opt/cprocsp/bin/amd64/csptest -keyset -deletekeyset -cont '\\.\HDIMAGE\clientcont'
+echo "o" | /opt/cprocsp/bin/amd64/cryptcp -createcert -rdn "E=zm@bank.ru,CN=ZM" -cont 'clientcont' -pin 1234 -certusage "1.3.6.1.4.1.311.10.3.12" -sg
 
 # integrate to store uMy
 # /opt/cprocsp/bin/amd64/certmgr -inst -file myreq.req cont 'clientcont' -at_signature
